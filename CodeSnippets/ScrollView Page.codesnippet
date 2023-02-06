@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ayScrollViewPage</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat item_width = CGRectGetWidth(scrollView.frame);
+    NSInteger page = (scrollView.contentOffset.x + item_width * 0.5) / item_width;
+    &lt;#UIPageControl#&gt;.currentPage = page;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>72B47209-EB77-4ABB-85CC-CEAB6632B319</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>when ScrollView Page enable, to culculate the page</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>ScrollView Page</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

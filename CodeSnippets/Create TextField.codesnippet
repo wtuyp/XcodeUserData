@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ayTextField</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (UITextField *)&lt;#name#&gt;TextField {
+    if (!_&lt;#name#&gt;TextField) {
+        _&lt;#name#&gt;TextField = [[UITextField alloc] init];
+        _&lt;#name#&gt;TextField.textColor = [UIColor WhiteColor];
+        _&lt;#name#&gt;TextField.font = [UIFont systemFontOfSize:14];
+        _&lt;#name#&gt;TextField.placeholder = @"";
+        _&lt;#name#&gt;TextField.delegate = self;
+        _&lt;#name#&gt;TextField.returnKeyType = UIReturnKeySearch;
+    }
+    
+    return _&lt;#name#&gt;TextField;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9EE794C4-4E35-4247-BD2C-55E0217815C6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Create TextField</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

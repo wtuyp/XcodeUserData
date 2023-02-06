@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ayyymodel</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//+ (NSDictionary *)modelContainerPropertyGenericClass {
+//    return @{
+//        @"&lt;#listKey#&gt;": &lt;#item#&gt;.class,
+//    };
+//}
+
+// + (NSDictionary *)modelCustomPropertyMapper {
+//     return @{@"&lt;#receivedKey#&gt;" : @"&lt;#sendKey#&gt;"};
+// }
+
+// - (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic {
+//   return YES;
+// }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5730DA65-E5EB-4B66-8A54-607A1674A731</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>YYModel Handle</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
