@@ -3,23 +3,27 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ayButtonAction</string>
+	<string>ayInit</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (void)&lt;#buttonName#&gt;Action:(UIButton *)sender {
-    &lt;#code#&gt;
+	<string>- (instancetype)init {
+    self = [super init];
+    if (self) {
+        &lt;#code#&gt;
+    }
+    return self;
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>3301BFEA-6821-4C0B-A6CD-5A59C31D2A91</string>
+	<string>591425CF-F705-4F6C-89F7-8D08692CAD2B</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Button Action</string>
+	<string>Init Object</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

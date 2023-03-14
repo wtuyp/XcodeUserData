@@ -9,53 +9,39 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (void)request&lt;#name#&gt;DataWithRefresh:(BOOL)refresh {
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    dict[@"pageNum"] = refresh ? @1 : @(self.requestPage + 1);
-    dict[@"pageSize"] = @"10";
-    
-    [HUD show];
-    [NetWork requestMethod:DDCRequestTypePost
-              contentType:@"application/json"
-                interface:@"&lt;#url#&gt;"
-                   params:dict
-              compleBlock:^(HDError * _Nullable error, BOOL isSuccess, id  _Nullable responseData) {
-        [NJProgressHUD dismiss];
+	<string>- (void)requestListWithRefresh:(BOOL)refresh {
+    if (self.firstLoading) {
+        [MBProgressHUD showLoadingInView:self.view];
+    }
+    &lt;#request#&gt; *request = [[&lt;#request#&gt; alloc] init];
+    request.pagesize = 20;
+    request.page = refresh ? 1 : self.pageIndex + 1;
+    [request launchWithSuccess:^(int errorCode, NSString * _Nonnull errorMsg, id  _Nullable data) {
+        self.firstLoading = NO;
         [self.tableView.mj_header endRefreshing];
-        [self.tableView.mj_footer endRefreshing];
         
-        if (isSuccess) {
-            if (!responseData || ![responseData isKindOfClass:[NSDictionary class]]) {
-                return;
-            }
-
-            if (refresh) {
-                self.requestPage = 1;
-                [self.array removeAllObjects];
-            } else {
-                self.requestPage++;
-            }
-            
-            NSDictionary *dicData = responseData[@"data"];
-            NSArray&lt;&lt;#modelClass#&gt; *&gt; *models = [&lt;#modelClass#&gt; mj_objectArrayWithKeyValuesArray:dicData[@"rows"]];
-            [self.array addObjectsFromArray:models];
-            
-            NSInteger total = [dicData[@"total"] integerValue];
-            if (self.array.count &gt;= total) {
-                self.tableView.mj_footer.hidden = YES;
-            } else {
-                self.tableView.mj_footer.hidden = NO;
-            }
-            
-            if (self.array.count == 0) {
-                if (!self.tableView.emptyView) {
-                    EmptyView *emptyView = [DaDaoChengEmptyView emptyViewWithTitle:@"暂无数据" imageName:@"noContent" btnTitle:nil target:self action:nil];
-                    self.tableView.emptyView = emptyView;
-                }
-            }
-            [self.tableView reloadData];
+        &lt;#response#&gt; *response = (&lt;#response#&gt; *)data;
+        if (refresh) {
+            [MBProgressHUD hideAllTipsInView:self.view];
+            self.pageIndex = 1;
+            [self.tableDataList removeAllObjects];
         } else {
-            [HUD showError:error.desc];
+            self.pageIndex++;
+        }
+        [self.tableDataList addObjectsFromArray:response.order_list];
+        if (response.hasmore) {
+            [self.tableView.mj_footer endRefreshing];
+        } else {
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
+        self.tableView.mj_footer.hidden = self.tableDataList.count == 0;
+        
+        [self.tableView reloadData];
+    } failure:^(int errorCode, NSString * _Nonnull errorMsg, id  _Nullable data) {
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_header endRefreshing];
+        if (refresh) {
+            [MBProgressHUD hideAllTipsInView:self.view];
         }
     }];
 }</string>

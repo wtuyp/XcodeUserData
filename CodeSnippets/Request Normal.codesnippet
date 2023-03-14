@@ -3,23 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ayButtonAction</string>
+	<string>ayRequestNormal</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (void)&lt;#buttonName#&gt;Action:(UIButton *)sender {
-    &lt;#code#&gt;
+	<string>- (void)request&lt;#api#&gt; {
+    &lt;#request#&gt; *request = [[&lt;#request#&gt; alloc] init];
+    [request launchWithSuccess:^(int errorCode, NSString * _Nonnull errorMsg, id  _Nullable data) {
+        &lt;#response#&gt; *response = (&lt;#response#&gt; *)data;
+    } failure:^(int errorCode, NSString * _Nonnull errorMsg, id  _Nullable data) {
+        [MBProgressHUD showWithText:errorMsg];
+    }];
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>3301BFEA-6821-4C0B-A6CD-5A59C31D2A91</string>
+	<string>3DDD171C-94C2-469B-A3A2-74D0AB3AB920</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Button Action</string>
+	<string>Request Normal</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

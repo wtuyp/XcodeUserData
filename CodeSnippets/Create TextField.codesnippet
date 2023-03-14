@@ -6,17 +6,20 @@
 	<string>ayTextField</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>- (UITextField *)&lt;#name#&gt;TextField {
     if (!_&lt;#name#&gt;TextField) {
         _&lt;#name#&gt;TextField = [[UITextField alloc] init];
         _&lt;#name#&gt;TextField.textColor = [UIColor WhiteColor];
-        _&lt;#name#&gt;TextField.font = [UIFont systemFontOfSize:14];
-        _&lt;#name#&gt;TextField.placeholder = @"";
+        _&lt;#name#&gt;TextField.font = FONT(14);
+        _&lt;#name#&gt;TextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:LOCALIZATION(@"") attributes:@{
+            NSFontAttributeName: FONT(14), NSForegroundColorAttributeName: COLOR_HEX(#BEC0CB)
+        }];
         _&lt;#name#&gt;TextField.delegate = self;
         _&lt;#name#&gt;TextField.returnKeyType = UIReturnKeySearch;
+        _&lt;#name#&gt;TextField.clearButtonMode = UITextFieldViewModeWhileEditing;
     }
     
     return _&lt;#name#&gt;TextField;
