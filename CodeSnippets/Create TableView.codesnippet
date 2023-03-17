@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ayTableGet</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView.backgroundColor = [UIColor clearColor];
+//        _tableView.contentInset = UIEdgeInsetsMake(0, 0, SAFE_BOTTOM, 0);
+        _tableView.delegate = (id&lt;UITableViewDelegate&gt;)self;
+        _tableView.dataSource = (id&lt;UITableViewDataSource&gt;)self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.showsVerticalScrollIndicator = NO;
+        _tableView.rowHeight = 40;
+        _tableView.estimatedRowHeight = 40;
+//        [_tableView registerClass:&lt;#cell#&gt;.class forCellReuseIdentifier:NSStringFromClass(&lt;#cell#&gt;.class)];
+        _tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+        WEAK_SELF
+//        _tableView.mj_header = [CustomRefreshHeader headerWithRefreshingBlock:^{
+//            STRONG_SELF
+//            [self requestListWithRefresh:YES];
+//        }];
+
+//        _tableView.mj_footer = [CustomRefreshFooterView footerWithRefreshingBlock:^{
+//            STRONG_SELF
+//            [self requestListWithRefresh:NO];
+//        }];
+
+//        _tableView.mj_footer.hidden = YES;
+//        _tableView.loadState.reload = ^{
+//            STRONG_SELF
+//            [self requestListWithRefresh:YES];
+//        };
+    }
+    return _tableView;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>AA56E7FE-FB9F-4590-8CD5-915F0AF17547</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Create TableView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
