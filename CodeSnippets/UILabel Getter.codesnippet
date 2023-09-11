@@ -3,29 +3,29 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ayGetter</string>
+	<string>ayGetterLabel</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- &lt;#name#&gt; {
+	<string>- (UILabel *)&lt;#name#&gt; {
     if (!_&lt;#name#&gt;) {
-        _&lt;#name#&gt; = [[&lt;#class#&gt; alloc] init];
+        _&lt;#name#&gt; = [UILabel labelWithColor:&lt;#(nonnull UIColor *)#&gt; font:&lt;#(nonnull UIFont *)#&gt;];
     }
     return _&lt;#name#&gt;;
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>F13E01D6-21B6-4EDD-93D4-90B84A73991C</string>
+	<string>EE70EB9F-1D0F-4152-964E-C6023A5D6D99</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Object Getter</string>
+	<string>UILabel Getter</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

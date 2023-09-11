@@ -10,19 +10,19 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>- (UITextField *)&lt;#name#&gt;TextField {
-    if (!_&lt;#name#&gt;TextField) {
-        _&lt;#name#&gt;TextField = [[UITextField alloc] init];
-        _&lt;#name#&gt;TextField.textColor = [UIColor WhiteColor];
-        _&lt;#name#&gt;TextField.font = FONT(14);
-        _&lt;#name#&gt;TextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:LOCALIZATION(@"") attributes:@{
+    if (!_&lt;#name#&gt;) {
+        _&lt;#name#&gt; = [[UITextField alloc] init];
+        _&lt;#name#&gt;.textColor = COLOR_HEX(#323232);
+        _&lt;#name#&gt;.font = FONT(14);
+        _&lt;#name#&gt;.attributedPlaceholder = [[NSAttributedString alloc] initWithString:LOCALIZATION(@"") attributes:@{
             NSFontAttributeName: FONT(14), NSForegroundColorAttributeName: COLOR_HEX(#BEC0CB)
         }];
-        _&lt;#name#&gt;TextField.delegate = self;
-        _&lt;#name#&gt;TextField.returnKeyType = UIReturnKeySearch;
-        _&lt;#name#&gt;TextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+//        _&lt;#name#&gt;.delegate = self;
+        _&lt;#name#&gt;.returnKeyType = UIReturnKeySearch;
+        _&lt;#name#&gt;.clearButtonMode = UITextFieldViewModeWhileEditing;
     }
     
-    return _&lt;#name#&gt;TextField;
+    return _&lt;#name#&gt;;
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>9EE794C4-4E35-4247-BD2C-55E0217815C6</string>

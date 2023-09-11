@@ -17,12 +17,14 @@
     request.pagesize = 20;
     request.page = refresh ? 1 : self.pageIndex + 1;
     [request launchWithSuccess:^(int errorCode, NSString * _Nonnull errorMsg, id  _Nullable data) {
-        self.firstLoading = NO;
+        if (self.firstLoading) {
+            self.firstLoading = NO;
+            [MBProgressHUD hideAllTipsInView:self.view];
+        }
         [self.tableView.mj_header endRefreshing];
         
         &lt;#response#&gt; *response = (&lt;#response#&gt; *)data;
         if (refresh) {
-            [MBProgressHUD hideAllTipsInView:self.view];
             self.pageIndex = 1;
             [self.tableDataList removeAllObjects];
         } else {
@@ -35,12 +37,12 @@
             [self.tableView.mj_footer endRefreshingWithNoMoreData];
         }
         self.tableView.mj_footer.hidden = self.tableDataList.count == 0;
-        
+        self.tableView.loadState.state = self.tableDataList.count &gt; 0 ? LoadStateAttachView : LoadStateEmptyData;
         [self.tableView reloadData];
     } failure:^(int errorCode, NSString * _Nonnull errorMsg, id  _Nullable data) {
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_header endRefreshing];
-        if (refresh) {
+        if (self.firstLoading) {
             [MBProgressHUD hideAllTipsInView:self.view];
         }
     }];
