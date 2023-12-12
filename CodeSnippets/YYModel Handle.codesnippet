@@ -21,7 +21,11 @@
 
 // - (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic {
 //   return YES;
-// }</string>
+// }
+
+//- (NSDictionary *)modelCustomWillTransformFromDictionary:(NSDictionary *)dic {
+//    return dic;
+//}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>5730DA65-E5EB-4B66-8A54-607A1674A731</string>
 	<key>IDECodeSnippetLanguage</key>
@@ -33,6 +37,6 @@
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>
