@@ -12,6 +12,6 @@ FontAndColorThemes:
 主题
 
 IDETemplateMacros.plist
-Xcode文件头部格式
+Xcode文件头部格式，用 CotEditor 打开编辑
 
 
