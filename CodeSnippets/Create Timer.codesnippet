@@ -3,26 +3,41 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>UIColorGo</string>
+	<string></string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeExpression</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>[UIColor colorWithRed:&lt;#red#&gt; / 255.0 green:&lt;#green#&gt; / 255.0 blue:&lt;#blue#&gt; / 255.0 alpha:&lt;#alpha#&gt;];</string>
+	<string>- (void)startTimer {
+    if (self.timer) {
+        return;
+    }
+    
+    WEAK_SELF
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:15.0 block:^(NSTimer * _Nonnull timer) {
+        STRONG_SELF
+//        [self timerAction];
+    } repeats:YES];
+}
+
+- (void)stopTimer {
+    if ([self.timer isValid]) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B63AD588-ECCB-40A6-AC90-526B757D724A</string>
+	<string>317395DC-E9C7-4798-98BE-B24F184C34F0</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetPlatformFamily</key>
-	<string>iphoneos</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>UIColor convenient</string>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>UIColor convenient</string>
+	<string>Create Timer</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
