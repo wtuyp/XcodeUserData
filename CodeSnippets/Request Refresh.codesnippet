@@ -10,41 +10,27 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>- (void)requestListWithRefresh:(BOOL)refresh {
-    if (self.firstLoading) {
+    if (refresh) {
         [MBProgressHUD showLoadingInView:self.view];
     }
     &lt;#request#&gt; *request = [[&lt;#request#&gt; alloc] init];
     request.pagesize = 20;
-    request.page = refresh ? 1 : self.pageIndex + 1;
-    [request launchWithSuccess:^(int errorCode, NSString * _Nonnull errorMsg, id  _Nullable data) {
-        if (self.firstLoading) {
-            self.firstLoading = NO;
+    request.page = refresh ? self.tableView.firstPageIndex : self.tableView.nextPageIndex;
+    [request startRequestWithSuccess:^(NSInteger statusCode, NSString * _Nonnull message, id  _Nullable data) {
+        if (refresh) {
             [MBProgressHUD hideAllTipsInView:self.view];
         }
-        [self.tableView.mj_header endRefreshing];
         
         &lt;#response#&gt; *response = (&lt;#response#&gt; *)data;
-        if (refresh) {
-            self.pageIndex = 1;
-            [self.tableDataList removeAllObjects];
-        } else {
-            self.pageIndex++;
-        }
-        [self.tableDataList addObjectsFromArray:response.order_list];
-        if (response.hasmore) {
-            [self.tableView.mj_footer endRefreshing];
-        } else {
-            [self.tableView.mj_footer endRefreshingWithNoMoreData];
-        }
-        self.tableView.mj_footer.hidden = self.tableDataList.count == 0;
-        self.tableView.loadState.state = self.tableDataList.count &gt; 0 ? LoadStateAttachView : LoadStateEmptyData;
+        [self.tableView addDataArray:response.list hasMore:response.hasMore isRefresh:refresh];
+        self.tableView.dataStateView.state = self.tableView.hasData ? AYDataStateNone : AYDataStateEmptyData;
         [self.tableView reloadData];
-    } failure:^(int errorCode, NSString * _Nonnull errorMsg, id  _Nullable data) {
-        [self.tableView.mj_header endRefreshing];
-        [self.tableView.mj_header endRefreshing];
-        if (self.firstLoading) {
+    } failure:^(NSInteger statusCode, NSString * _Nonnull message, id  _Nullable data) {
+        [self.tableView endRefreshing];
+        if (refresh) {
             [MBProgressHUD hideAllTipsInView:self.view];
         }
+        [MBProgressHUD showWithText:message inView:self.view];
     }];
 }</string>
 	<key>IDECodeSnippetIdentifier</key>

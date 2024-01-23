@@ -10,11 +10,14 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>- (void)request&lt;#api#&gt; {
+    [MBProgressHUD showLoadingInView:self.view];
     &lt;#request#&gt; *request = [[&lt;#request#&gt; alloc] init];
-    [request launchWithSuccess:^(int errorCode, NSString * _Nonnull errorMsg, id  _Nullable data) {
+    [request startRequestWithSuccess:^(NSInteger statusCode, NSString * _Nonnull message, id  _Nullable data) {
+        [MBProgressHUD hideAllTipsInView:self.view];
         &lt;#response#&gt; *response = (&lt;#response#&gt; *)data;
-    } failure:^(int errorCode, NSString * _Nonnull errorMsg, id  _Nullable data) {
-        [MBProgressHUD showWithText:errorMsg];
+    } failure:^(NSInteger statusCode, NSString * _Nonnull message, id  _Nullable data) {
+        [MBProgressHUD hideAllTipsInView:self.view];
+        [MBProgressHUD showWithText:message inView:self.view];
     }];
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
