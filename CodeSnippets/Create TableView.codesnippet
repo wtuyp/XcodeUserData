@@ -19,24 +19,23 @@
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+//        _tableView.rowHeight = RecordListCell.cellHeight;
+//        _tableView.estimatedRowHeight = RecordListCell.cellHeight;
         [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
         
 //        WEAK_SELF
-//        _tableView.mj_header = [CustomRefreshHeader headerWithRefreshingBlock:^{
+//        _tableView.mj_header = [AppRefreshHeader headerWithRefreshingBlock:^{
 //            STRONG_SELF
 //            [self requestListWithRefresh:YES];
 //        }];
-
-//        _tableView.mj_footer = [CustomRefreshFooterView footerWithRefreshingBlock:^{
+//        _tableView.mj_footer = [AppRefreshFooterView footerWithRefreshingBlock:^{
 //            STRONG_SELF
 //            [self requestListWithRefresh:NO];
-//        }];
-//        _tableView.mj_footer.hidden = YES;
-        
-//        _tableView.loadState.reload = ^{
+//        }];        
+//        [_tableView setErrorDataReloadBlock:^{
 //            STRONG_SELF
 //            [self requestListWithRefresh:YES];
-//        };
+//        }];
     }
     return _tableView;
 }</string>

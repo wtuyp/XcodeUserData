@@ -14,8 +14,7 @@
         [MBProgressHUD showLoadingInView:self.view];
     }
     &lt;#request#&gt; *request = [[&lt;#request#&gt; alloc] init];
-    request.pagesize = 20;
-    request.page = refresh ? self.tableView.firstPageIndex : self.tableView.nextPageIndex;
+    request.page = [self.tableView pageIndexWithRefresh:refresh];
     [request startRequestWithSuccess:^(NSInteger statusCode, NSString * _Nonnull message, id  _Nullable data) {
         if (refresh) {
             [MBProgressHUD hideAllTipsInView:self.view];

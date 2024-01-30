@@ -10,7 +10,7 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>- (void)&lt;#buttonName#&gt;Action:(UIButton *)sender {
-    // TODO: 
+    // TODO: action
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>3301BFEA-6821-4C0B-A6CD-5A59C31D2A91</string>
