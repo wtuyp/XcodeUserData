@@ -9,15 +9,15 @@
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (UITextField *)&lt;#name#&gt;TextField {
+	<string>- (UITextField *)&lt;#name#&gt;TF {
     if (!_&lt;#name#&gt;) {
         _&lt;#name#&gt; = [[UITextField alloc] init];
         _&lt;#name#&gt;.textColor = COLOR_HEX(#323232);
         _&lt;#name#&gt;.font = FONT(14);
-        _&lt;#name#&gt;.attributedPlaceholder = [[NSAttributedString alloc] initWithString:LOCALIZATION(@"") attributes:@{
-            NSFontAttributeName: FONT(14), NSForegroundColorAttributeName: COLOR_HEX(#BEC0CB)
+        _&lt;#name#&gt;.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"" attributes:@{
+            NSFontAttributeName: FONT(14), NSForegroundColorAttributeName: COLOR_HEX(#7F7F7F)
         }];
-//        _&lt;#name#&gt;.delegate = self;
+//        _&lt;#name#&gt;.delegate = (id&lt;UITextFieldDelegate&gt;)self;
         _&lt;#name#&gt;.returnKeyType = UIReturnKeySearch;
         _&lt;#name#&gt;.clearButtonMode = UITextFieldViewModeWhileEditing;
     }

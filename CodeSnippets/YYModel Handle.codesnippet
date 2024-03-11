@@ -9,19 +9,23 @@
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//+ (NSDictionary *)modelContainerPropertyGenericClass {
+	<string>#pragma mark - yymodel
+
+//+ (NSDictionary *)modelContainerPropertyGenericClass {
 //    return @{
 //        @"&lt;#listKey#&gt;": &lt;#item#&gt;.class,
 //    };
 //}
 
-// + (NSDictionary *)modelCustomPropertyMapper {
-//     return @{@"&lt;#receivedKey#&gt;" : @"&lt;#sendKey#&gt;"};
-// }
+//+ (NSDictionary *)modelCustomPropertyMapper {
+//    return @{
+//        @"&lt;#receivedKey#&gt;" : @"&lt;#sendKey#&gt;",
+//    };
+//}
 
-// - (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic {
-//   return YES;
-// }
+//- (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic {
+//    return YES;
+//}
 
 //- (NSDictionary *)modelCustomWillTransformFromDictionary:(NSDictionary *)dic {
 //    return dic;
