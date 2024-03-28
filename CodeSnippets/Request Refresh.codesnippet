@@ -14,15 +14,15 @@
         [MBProgressHUD showLoadingInView:self.view];
     }
     &lt;#request#&gt; *request = [[&lt;#request#&gt; alloc] init];
-    request.page = [self.tableView pageIndexWithRefresh:refresh];
+    request.pageNum = [self.tableView pageIndexWithRefresh:refresh];
     [request startRequestWithSuccess:^(NSInteger statusCode, NSString * _Nonnull message, id  _Nullable data) {
         if (refresh) {
             [MBProgressHUD hideAllTipsInView:self.view];
         }
         
         &lt;#response#&gt; *response = (&lt;#response#&gt; *)data;
-        [self.tableView addDataArray:response.list hasMore:response.hasMore isRefresh:refresh];
-        self.tableView.dataStateView.state = self.tableView.hasData ? AYDataStateNone : AYDataStateEmptyData;
+        [self.tableView addPageDataArray:response.list hasMore:response.hasMore isRefresh:refresh];
+        self.tableView.viewDataState = self.tableView.hasData ? AYDataStateHidden : AYDataStateEmptyData;
         [self.tableView reloadData];
     } failure:^(NSInteger statusCode, NSString * _Nonnull message, id  _Nullable data) {
         [self.tableView endRefreshing];

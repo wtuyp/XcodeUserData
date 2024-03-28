@@ -28,7 +28,9 @@
 //}
 
 //- (NSDictionary *)modelCustomWillTransformFromDictionary:(NSDictionary *)dic {
-//    return dic;
+//    NSMutableDictionary *mDic = [[NSMutableDictionary alloc] init];
+//    mDic[@"&lt;#key#&gt;"] = dic;
+//    return mDic;
 //}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>5730DA65-E5EB-4B66-8A54-607A1674A731</string>
