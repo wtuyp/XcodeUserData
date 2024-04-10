@@ -32,7 +32,7 @@
 //            STRONG_SELF
 //            [self requestListWithRefresh:NO];
 //        }];        
-//        [_tableView setErrorDataReloadBlock:^{
+//        [_tableView setViewErrorDataStateConfigWithBtnActionBlock:^{
 //            STRONG_SELF
 //            [self requestListWithRefresh:YES];
 //        }];

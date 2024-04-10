@@ -13,7 +13,7 @@
 
 //+ (NSDictionary *)modelContainerPropertyGenericClass {
 //    return @{
-//        @"&lt;#listKey#&gt;": &lt;#item#&gt;.class,
+//        @"list": &lt;#Class#&gt;.class,
 //    };
 //}
 
