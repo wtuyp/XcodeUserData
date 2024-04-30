@@ -15,7 +15,7 @@
     }
     &lt;#request#&gt; *request = [[&lt;#request#&gt; alloc] init];
     request.pageNum = [self.tableView pageIndexWithRefresh:refresh];
-    [request startRequestWithSuccess:^(NSInteger statusCode, NSString * _Nonnull message, id  _Nullable data) {
+    [request startRequestWithSuccess:^(NSInteger statusCode, NSString * _Nonnull message, id _Nullable data) {
         if (refresh) {
             [MBProgressHUD hideAllTipsInView:self.view];
         }
@@ -24,7 +24,7 @@
         [self.tableView addPageDataArray:response.list hasMore:response.hasMore isRefresh:refresh];
         self.tableView.viewDataState = self.tableView.hasData ? AYDataStateHidden : AYDataStateEmptyData;
         [self.tableView reloadData];
-    } failure:^(NSInteger statusCode, NSString * _Nonnull message, id  _Nullable data) {
+    } failure:^(NSInteger statusCode, NSString * _Nonnull message, id _Nullable data) {
         [self.tableView endRefreshing];
         if (refresh) {
             [MBProgressHUD hideAllTipsInView:self.view];
