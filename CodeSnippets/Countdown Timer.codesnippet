@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ayCountdownTimer</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - timer
+
+- (void)startCountdownTimer {
+    if (self.countdownTimer) {
+        return;
+    }
+
+    WEAK_SELF
+    self.countdownTimer = [NSTimer startCountdownTimerWithTotalSeconds:3 interval:1 beforeActionBlock:^{
+        STRONG_SELF
+        // 倒计时开始前
+        
+    } actionBlock:^(NSTimeInterval timeLeftInterval) {
+        STRONG_SELF
+        // 倒计时开始
+        
+    } endActionBlock:^{
+        STRONG_SELF
+        // 倒计时结束
+        
+    }];
+}
+
+- (void)stopCountdownTimer {
+    [self.countdownTimer stopCountdownTimer];
+    self.countdownTimer = nil;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3AB4212D-A17E-4515-BF48-683C0FE220EB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Create Countdown Timer</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
