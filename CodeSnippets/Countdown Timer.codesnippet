@@ -12,7 +12,7 @@
 	<string>#pragma mark - timer
 
 - (void)startCountdownTimer {
-    if (self.countdownTimer) {
+    if (self.countdownTimer.isValid) {
         return;
     }
 
