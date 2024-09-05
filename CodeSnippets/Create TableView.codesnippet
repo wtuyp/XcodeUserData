@@ -31,10 +31,6 @@
 //        _tableView.mj_footer = [AppRefreshFooterView footerWithRefreshingBlock:^{
 //            STRONG_SELF
 //            [self requestListWithRefresh:NO];
-//        }];        
-//        [_tableView setViewErrorDataStateConfigWithBtnActionBlock:^{
-//            STRONG_SELF
-//            [self requestListWithRefresh:YES];
 //        }];
     }
     return _tableView;
