@@ -22,7 +22,7 @@
         
         &lt;#response#&gt; *response = (&lt;#response#&gt; *)data;
         [self.tableView addPageDataArray:response.list hasMore:response.hasMore isRefresh:refresh];
-        self.tableView.viewDataState = self.tableView.hasData ? AYDataStateHidden : AYDataStateEmptyData;
+        self.tableView.viewDataState = self.tableView.hasData ? AYViewDataStateHidden : AYViewDataStateEmpty;
         [self.tableView reloadData];
     } failure:^(NSInteger statusCode, NSString * _Nonnull message, id _Nullable data) {
         [self.tableView endRefreshing];
