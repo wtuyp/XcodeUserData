@@ -12,10 +12,10 @@
 	<string>- (void)request&lt;#api#&gt; {
     [MBProgressHUD showLoadingInView:self.view];
     &lt;#request#&gt; *request = [[&lt;#request#&gt; alloc] init];
-    [request startRequestWithSuccess:^(NSInteger statusCode, NSString * _Nonnull message, id _Nullable data) {
+    [request startRequestWithSuccess:^(NSInteger statusCode, NSString * _Nullable message, id _Nullable data) {
         [MBProgressHUD hideAllTipsInView:self.view];
         &lt;#response#&gt; *response = (&lt;#response#&gt; *)data;
-    } failure:^(NSInteger statusCode, NSString * _Nonnull message, id _Nullable data) {
+    } failure:^(NSInteger statusCode, NSString * _Nullable message, id _Nullable data) {
         [MBProgressHUD hideAllTipsInView:self.view];
         [MBProgressHUD showWithText:message inView:self.view];
     }];
